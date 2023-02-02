@@ -1,0 +1,23 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = [""]
+description = ""
+language = "rust"
+manifest_version = 2
+name = "fastly-testing-rs"
+service_id = "2QcW1RFELqwKeRxRboVn76"
+
+[scripts]
+  build = "cargo build --bin fastly-compute-project --release --target wasm32-wasi --color always"
+
+[local_server.backends.docs_en]
+  url = "https://docswebsiteen.gtsb.io/" 
+  override_host = "https://docswebsiteen.gtsb.io/"  
+  cert_host = "https://docswebsiteen.gtsb.io/"
+
+[local_server.backends.docs_kr]
+  url = "https://docswebsitekr.gtsb.io/" 
+  
+[local_server.backends.docs_jp]
+  url = "https://docswebsitejp.gtsb.io/" 
